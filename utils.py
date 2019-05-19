@@ -8,9 +8,9 @@ def gcd(a, b):
 
 
 def gen_mutual_prime(x):
-    tmp = random.randint()
+    tmp = random.randint(0, x << 4)
     while gcd(tmp, x) > 1:
-        tmp = random.randint()
+        tmp = random.randint(0, x << 4)
     return tmp
 
 
