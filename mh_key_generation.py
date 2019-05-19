@@ -13,7 +13,7 @@ def key_generation(public_key_file_path, private_key_file_path):
 
     # Генерация супервозрастающей последовательности')
     for i in range(BLOCK_SIZE):
-        w = random.randint(s, s << 1)
+        w = random.randint(s, s << 4)
         s += w
         private_key.append(w)
 
@@ -28,10 +28,7 @@ def key_generation(public_key_file_path, private_key_file_path):
 
     # Генерация открытого ключа
     for i in range(BLOCK_SIZE):
-        public_key.append(private_key[i]*r % q)
-
-    print(private_key)
-    print(public_key)
+        public_key.append(r*private_key[i] % q)
 
     # Запись ключей в файл
     try:
