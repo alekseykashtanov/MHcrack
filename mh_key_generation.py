@@ -40,7 +40,7 @@ def key_generation(public_key_file_path, private_key_file_path):
             priv_k.write(str(elem) + '\n')
     except IOError:
         print("key_generation: IOError")
-    finally:
+    else:
         pub_k.close()
         priv_k.close()
 

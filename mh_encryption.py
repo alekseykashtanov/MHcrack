@@ -23,7 +23,7 @@ def mh_encrypt(public_key_file_path, plainttext_file_path, ciphertext_file_path)
         ciphertext_file.close()
     except IOError:
         print('mh_encrypt: IOError')
-    finally:
+    else:
         key_input.close()
         plaintext_input.close()
         ciphertext_file.close()

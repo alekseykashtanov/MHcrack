@@ -16,13 +16,12 @@ def gen_mutual_prime(x):
 
 def extended_gcd(a, b):
     if a == 0:
-        return (b, 0, 1)
+        return b, 0, 1
     else:
         g, x, y = extended_gcd(b % a, a)
-        return (g, y - (b // a) * x, x)
+        return g, y - (b // a) * x, x
 
 
-# x = mulinv(b) mod n, (x * b) % n == 1
 def mult_inverse(b, n):
     g, x, _ = extended_gcd(b, n)
     if g == 1:
