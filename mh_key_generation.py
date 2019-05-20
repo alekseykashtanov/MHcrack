@@ -1,6 +1,6 @@
 # @brief Merkle-Hellman cryptosystem key generation function
 
-from mh_types import BLOCK_SIZE
+from mh_constants import *
 from utils import gen_mutual_prime
 import random
 
@@ -8,12 +8,12 @@ import random
 def key_generation(public_key_file_path, private_key_file_path):
     public_key = []
     private_key = []
-    s = 1
+    s = 10
     random.seed()
 
-    # Генерация супервозрастающей последовательности')
-    for i in range(BLOCK_SIZE):
-        w = random.randint(s, s << 4)
+    # Генерация супервозрастающей последовательности
+    for i in range(KEY_LENGTH):
+        w = random.randint(s, s << 1)
         s += w
         private_key.append(w)
 
@@ -27,7 +27,7 @@ def key_generation(public_key_file_path, private_key_file_path):
     private_key.append(r)
 
     # Генерация открытого ключа
-    for i in range(BLOCK_SIZE):
+    for i in range(KEY_LENGTH):
         public_key.append(r*private_key[i] % q)
 
     # Запись ключей в файл
@@ -41,6 +41,7 @@ def key_generation(public_key_file_path, private_key_file_path):
     except IOError:
         print("key_generation: IOError")
     else:
+        print('Successful generation of keys')
         pub_k.close()
         priv_k.close()
 

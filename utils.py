@@ -1,6 +1,6 @@
 # @brief Utils for MHCS
 
-import random
+from random import randint
 
 
 def gcd(a, b):
@@ -8,9 +8,9 @@ def gcd(a, b):
 
 
 def gen_mutual_prime(x):
-    tmp = random.randint(0, x << 4)
+    tmp = randint(0, x << 4)
     while gcd(tmp, x) > 1:
-        tmp = random.randint(0, x << 4)
+        tmp = randint(0, x << 4)
     return tmp
 
 

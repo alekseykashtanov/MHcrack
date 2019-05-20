@@ -12,12 +12,13 @@ cipher_in = "input_data/ciphertext.txt"
 plain_out = "output_data/plaintext.txt"
 cipher_out = "output_data/ciphertext.txt"
 
-mode = 'h'
+mode = 'd'
 # while mode != 'e' and mode != 'd' and mode != 'g':
 #     print('Usage:')
 #     print('g - key_generation')
 #     print('e - encryption')
 #     print('d - decryption')
+#     print('h - hacking')
 #     mode = input()
 
 if mode == 'g':
