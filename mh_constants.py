@@ -1,6 +1,6 @@
 # @brief Constants for MHCS
 
-BLOCK_SIZE = 8
+BLOCK_SIZE = 1
 BYTE_LENGTH = 8
 
 KEY_LENGTH = BLOCK_SIZE * BYTE_LENGTH

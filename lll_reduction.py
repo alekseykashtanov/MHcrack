@@ -1,8 +1,5 @@
 # @brief LLL_reduction algorithm
-
-
-def scalar_product(a, b):
-    return sum([a_i * b_i for a_i, b_i in zip(a, b)])
+from utils import scalar_product
 
 
 def gram_schmidt(basis):

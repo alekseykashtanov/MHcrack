@@ -1,4 +1,5 @@
 from mh_constants import *
+from base64 import b32encode
 
 
 def block_encryption(block, key):
@@ -32,8 +33,9 @@ def mh_encrypt(public_key_file_path, plainttext_file_path, ciphertext_file_path)
 
         for block_idx in range(len(plaintext) // BLOCK_SIZE + 1):
             block = plaintext[block_idx * BLOCK_SIZE: (block_idx + 1) * BLOCK_SIZE]
-            result_ = block_encryption(block, public_key)
-            result.append(result_)
+            if len(block):
+                result_ = block_encryption(block, public_key)
+                result.append(result_)
 
         for elem in result:
             ciphertext_file.write(str(elem) + '\n')

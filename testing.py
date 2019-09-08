@@ -12,7 +12,7 @@ cipher_in = "input_data/ciphertext.txt"
 plain_out = "output_data/plaintext.txt"
 cipher_out = "output_data/ciphertext.txt"
 
-mode = 'd'
+mode = 'h'
 # while mode != 'e' and mode != 'd' and mode != 'g':
 #     print('Usage:')
 #     print('g - key_generation')
